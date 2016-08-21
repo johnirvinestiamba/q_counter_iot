@@ -1,0 +1,40 @@
+body{
+	display: block;
+	background: #E0F2F1;
+}
+.container{
+	height: 500px;
+	width: 500px;
+	margin: auto;
+	background: #4DB6AC;
+	margin-top: 100px;
+}
+#currCount{
+	font-family: 'Candal', sans-serif;
+	color: #ffffff;
+	font-size: 300px;
+	margin: auto;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	line-height: 300px;
+}
+#header{
+	font-family: 'Montserrat', sans-serif;
+	background: #009688;
+	color: #fff;
+	height: 100px;
+	text-align: center;
+	font-size: 50px;
+	line-height: 100px;
+	border-bottom: solid #fff 5px;
+}
+.notify{
+	font-family: 'Muli', sans-serif;
+	color: #607D8B;
+	width: 500px;
+	height: auto;
+	margin: auto;
+	text-align: center;
+	margin-top: 5px;
+}

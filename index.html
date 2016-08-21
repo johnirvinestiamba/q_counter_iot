@@ -1,0 +1,66 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Queue Counter IoT</title>
+	<meta name="description" content="Basic WioLink IoT Demo using Firebase">
+	<meta name="author" content="John Irvin Estiamba">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Candal" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div id="header">current number</div>
+		<div id="currCount"></div>
+	</div>
+	<!-- Auth is disabled in this project
+	<div class="notify">
+		<span id="notify-head">Login with <a href="#" onclick="onAuth()">Google</a> to be notified when your number is near.</span>
+	</div>
+	-->
+	<script src="scripts/script.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyDmCGcGseselfsu1dbwwnvPT2_VwvIWS7k",
+	    authDomain: "vision-api-project-308a4.firebaseapp.com",
+	    databaseURL: "https://vision-api-project-308a4.firebaseio.com",
+	    storageBucket: "vision-api-project-308a4.appspot.com",
+	  };
+	  firebase.initializeApp(config);
+
+	  var getCount = firebase.database().ref('pushbutton');
+	  var count = 0;
+	  var provider = new firebase.auth.GoogleAuthProvider();
+	  var token = '';
+	  var user = '';
+	  getCount.on('value', function(snapshot){
+	  	count = snapshot.val();
+	  	document.getElementById('currCount').innerHTML = count;
+	  	console.log(count);
+	  });
+	  /* Auth function is disabled
+	  function onAuth(){
+	  	firebase.auth().signInWithPopup(provider).then(function(result) {
+	  		token = result.credential.accesstoken
+	  		user = result.user;
+	  		document.getElementById('notify-head').innerHTML = 'Hello ' + user.displayName + '! \n';
+	  	}).catch(function(error) {
+	  		var errorCode = error.code;
+	  		var errorMessage = error.message;
+	  		var email = error.email;
+	  		var credential = error.credential;
+	  		console.log('code : ' + errorCode + '\n' + 'message : ' + errorMessage); 
+	  	});
+	  }*/
+
+	</script>
+    
+</body>
+</html>
